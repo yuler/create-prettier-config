@@ -2,10 +2,7 @@
 
 import fs from 'node:fs/promises'
 import path from 'node:path'
-
-// TODO: Use import `@yuler/prettier-config`
-// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-import-json
-const configPath = './node_modules/@yuler/prettier-config/index.json'
+import {createRequire} from 'node:module'
 
 // refs: https://prettier.io/docs/en/configuration.html
 const CONFIT_FILES = [
@@ -50,10 +47,14 @@ export default async function main() {
 		}
 	}
 
-	// Copy config file
-	await fs.copyFile(
-		new URL(configPath, import.meta.url),
+	// Write config file
+	// TODO: Use import `@yuler/prettier-config`
+	// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-import-json
+	const require = createRequire(import.meta.url)
+	const config = require('@yuler/prettier-config')
+	fs.writeFile(
 		path.resolve(process.cwd(), '.prettierrc.json'),
+		JSON.stringify(config, '', 4),
 	)
 	console.log('Generate prettier config file `.prettierrc.json`')
 }
