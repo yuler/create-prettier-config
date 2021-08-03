@@ -21,9 +21,7 @@
 	"files": [
 		"bin.js"
 	],
-	"bin": {
-		"create-prettier-config": "./bin.js"
-	},
+	"bin": "./bin.js",
 	"engines": {
 		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
