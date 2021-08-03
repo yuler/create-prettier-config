@@ -1,6 +1,6 @@
 {
 	"name": "@yuler/create-prettier-config",
-	"version": "0.0.1",
+	"version": "0.2.0",
 	"description": "generate prettier config file",
 	"author": "Yu Le <is.yuler@gmail.com>",
 	"license": "MIT",
