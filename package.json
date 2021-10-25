@@ -1,6 +1,6 @@
 {
 	"name": "@yuler/create-prettier-config",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "generate prettier config file",
 	"author": "Yu Le <is.yuler@gmail.com>",
 	"main": "bin.js",
