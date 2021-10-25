@@ -39,6 +39,7 @@ export default async function main() {
 			return
 		}
 	}
+
 	// 2. has config file?
 	for (const file of CONFIT_FILES) {
 		if (await pathExists(path.resolve(process.cwd(), file))) {
@@ -48,13 +49,11 @@ export default async function main() {
 	}
 
 	// Write config file
-	// TODO: Use import `@yuler/prettier-config`
-	// https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-import-json
 	const require = createRequire(import.meta.url)
-	const config = require('@yuler/prettier-config')
-	fs.writeFile(
+	const modulePath = require.resolve('@yuler/prettier-config')
+	await fs.copyFile(
+		modulePath,
 		path.resolve(process.cwd(), '.prettierrc.json'),
-		JSON.stringify(config, '', 4),
 	)
 	console.log('Generate prettier config file `.prettierrc.json`')
 }
