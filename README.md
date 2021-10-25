@@ -15,3 +15,9 @@ With Yarn:
 ```bash
 yarn create @yuler/prettier-config
 ```
+
+With pnpm:
+
+```bash
+pnpm create @yuler/preitter-config
+```

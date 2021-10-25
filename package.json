@@ -3,6 +3,7 @@
 	"version": "0.3.0",
 	"description": "generate prettier config file",
 	"author": "Yu Le <is.yuler@gmail.com>",
+	"main": "bin.js",
 	"license": "MIT",
 	"keywords": [
 		"prettier",
